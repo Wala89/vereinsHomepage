@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --abstandOben: 20px;
+  --abstandSeite: 10px;
+  --grau: #282820;
+  --grauSelected: #38382d;
+  --orange: #F67F00;
+}
+
+body {
+  background-color: #616161;
+  background-image: url("liga-background.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--abstandOben);
+  margin-bottom: var(--abstandOben);
+}
+
+#content {
+  /*background-color: pink;*/
+}
+
+/* --- Header Properties ----------------------------------------------------*/
+
+header {
+  /*background-color: yellow;*/
+  background-image: url("Header.png");
+  height: 200px;
+}
+
+/* --- Navigation Properties --------------------------------------------------*/
+
+nav {
+  /*background-color: green;*/
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 0px #000000;
+}
+
+  nav ul {
+    list-style: none; /* Macht die Aufzählungspunkte weg */
+    display: flex;
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: var(--grau);
+    transition: background-color 500ms;
+  }
+
+    nav li:hover {
+      background-color: var(--orange);
+    }
+
+    nav li:hover > a {
+      color: var(--grau);
+    }
+
+  nav li:first-child {
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  nav li:last-child {
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  nav li:hover .subMenue > li {
+    display: block;
+    flex-direction: column;
+    top: 0px;
+  }
+
+  .subMenue {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    box-shadow: 5px 5px 15px 0px #000000;
+  }
+
+  .subMenue li {
+    display: none; /* Hier das Menue ausblenden */
+    position: relative;
+    top: 0px;
+  }
+
+  .subMenue li:first-child {
+    border-radius: 0px; /* obenLinks obenRechts untenRechts untenLinks */
+  }
+
+  .subMenue li:last-child {
+    border-radius: 0px; /* obenLinks obenRechts untenRechts untenLinks */
+  }
+
+  nav a {
+    color: var(--orange);
+    height: 50px;
+    font-size: 18pt;
+    font-weight: bolder;
+    text-decoration: none;
+    align-items: center; /* Setzt alle items Vertikal in die Mitte */
+    justify-content: center; /* Setzt alle items horizental in die Mitte */
+    display: flex;
+  }
+
+.activePage {
+  background-color: var(--grauSelected);
+}
+
+  .activePage a {
+    text-decoration: underline;
+  }
+
+/* -----------------------------------------------------------------------------
+------------------------------ Main Properties ---------------------------------
+------------------------------------------------------------------------------*/
+
+#mainAside {
+  display: flex;
+  position: inherit;
+  align-items: flex-start;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 15px 0px #000000;
+  width: 70%;
+  margin: var(--abstandOben);
+  margin-left: 0;
+  margin-right: var(--abstandSeite);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------- Style VideoBox ------------------------------ */
+
+.videoBox {
+  width: 100%;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: black solid 2px;
+  border-radius: 0px 20px 20px 20px;
+  overflow: hidden;
+}
+
+  .videoBox:first-child {
+    margin-top: 0px;
+  }
+
+  .videoBox h1 {
+    width: 100%;
+    height: 50px;
+    font-size: 18pt;
+    background-color: var(--grau);
+    color: var(--orange);
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .videoBox div {
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  .videoBox iframe {
+    width: 640px;
+    height: 360px;
+  }
+
+/* ---------------------------- Style Member ---------------------------------*/
+
+.member {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: black solid 2px;
+  margin-top: 20px;
+  border-radius: 0px 20px 20px 20px;
+  overflow: hidden;
+}
+
+  .member h1{
+    width: 100%;
+    height: 50px;
+    font-size: 18pt;
+    background-color: var(--grau);
+    color: var(--orange);
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .memberContent {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  .memberContent p {
+    text-align: left;
+    font-size: 14pt;
+    margin: 20px;
+    margin-left: 0px;
+    float: left;
+  }
+
+  .memberContent div {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    overflow: hidden;
+    border: black solid 2px;
+    background-image: url(avatar.jpg);
+    background-position: center;
+    background-size: 100%;
+    float: left;
+    transition: 1000ms;
+  }
+
+  .memberContent div:hover {
+    background-size: 110%;
+  }
+
+/* -------------------------------- Artikel --------------------------------- */
+
+.mainArtikel {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: black solid 2px;
+  margin-top: 20px;
+  border-radius: 0px 20px 20px 20px;
+  overflow: hidden;
+}
+
+  .mainArtikel:first-child {
+    margin-top: 0;
+  }
+
+  .mainArtikel h1{
+    width: 100%;
+    height: 50px;
+    font-size: 18pt;
+    background-color: var(--grau);
+    color: var(--orange);
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .mainArtikel p {
+    text-align: center;
+    font-size: 14pt;
+    padding: 20px;
+  }
+
+/* -----------------------------------------------------------------------------
+---------------------------------- Aside ---------------------------------------
+------------------------------------------------------------------------------*/
+
+aside {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 15px 0px #000000;
+  width: 30%;
+  margin: var(--abstandOben);
+  margin-left: var(--abstandSeite);
+  margin-right: 0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+  .aside_box {
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+    background-color: yellow;
+    border-radius: 0px 20px 20px 20px;
+    overflow: hidden;
+    border: solid black 2px;
+  }
+
+  .aside_box:first-child {
+    margin-top: 0px;
+  }
+
+    .aside_box h1{
+      width: 100%;
+      height: 50px;
+      font-size: 18pt;
+      background-color: var(--grau);
+      color: var(--orange);
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .aside_box div{
+      height: 200px;
+      width: 100%;
+      overflow: hidden;
+      background-color: green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .aside_box div img {
+      width: 100%;
+      display: block;
+      transition: 1s;
+    }
+
+      .aside_box div img:hover {
+        width: 110%;
+      }
+
+/* -----------------------------------------------------------------------------
+   --------------------------  Footer Properties -------------------------------
+   -----------------------------------------------------------------------------*/
+
+footer {
+  background-color: var(--grau);
+  box-shadow: 5px 5px 15px 0px #000000;
+  height: 100px;
+  border-radius: 10px;
+}
+
+  footer p {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 16pt;
+    text-align: center;
+    line-height: 100px;
+  }
